@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -829,7 +829,6 @@ RectTransform:
   m_Children:
   - {fileID: 234772734}
   - {fileID: 749796591}
-  - {fileID: 372688615}
   - {fileID: 1103980654}
   - {fileID: 398846144}
   m_Father: {fileID: 0}
@@ -1529,7 +1528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 3989166921275862217, guid: 803a3ebe3becd47e6bd0a9776de68341, type: 3}
   gunTransform: {fileID: 1172888225}
-  bullets: 100000
+  bullets: 30
 --- !u!114 &297955944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1543,7 +1542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5839177174939770494, guid: 022f802a0dcaf4800b788ffcead62045, type: 3}
-  enemi_counter: 40
+  enemi_counter: 0
   min_time: 3
 --- !u!114 &297955945
 MonoBehaviour:
@@ -1850,16 +1849,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 372688614}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6075, y: 0.6075, z: 0.6075}
   m_Children: []
-  m_Father: {fileID: 177198602}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 18, y: 16}
+  m_AnchoredPosition: {x: 6.370367, y: 5.6625547}
   m_SizeDelta: {x: 334.5098, y: 35.9492}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &372688616
@@ -1922,7 +1921,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &398846144
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1936,7 +1935,7 @@ RectTransform:
   m_Children:
   - {fileID: 170505923}
   m_Father: {fileID: 177198602}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1955,8 +1954,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db26d8a0eb3f24d04b2d0d3bd88c9339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  black_screen: {fileID: 0}
-  pause_menu: {fileID: 0}
+  black_screen: {fileID: 398846146}
+  pause_menu: {fileID: 398846143}
 --- !u!114 &398846146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4690,7 +4689,7 @@ RectTransform:
   - {fileID: 364143842}
   - {fileID: 1244340545}
   m_Father: {fileID: 177198602}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -4709,6 +4708,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 534fc5996c6164c32b4746213d5ca54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 1103980656}
+  key: 27
 --- !u!114 &1103980656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4722,7 +4723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4752,7 +4753,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1103980657}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 398846145}
+        m_TargetAssemblyTypeName: PauseControl, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1103980657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6503,7 +6516,7 @@ Transform:
   m_LocalScale: {x: 0.4329178, y: 2.8381, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1586330177
 MonoBehaviour:
