@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 static class DataBank
 {
-    public static int get_bullet = 0;
+    public static int GetBullet() { return Random.Range(3, 6); }
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Events;
+
 
 public class OnBulletEnterBox : MonoBehaviour
 {
@@ -7,7 +7,7 @@ public class OnBulletEnterBox : MonoBehaviour
     {
         if (collision.collider.TryGetComponent<BulletCollision>(out var _))
         {
-            DataBank.get_bullet = Random.Range(3, 6);
+            FindObjectOfType<PlayerFire>().bullets += DataBank.GetBullet();
             Destroy(gameObject);
         }
     }

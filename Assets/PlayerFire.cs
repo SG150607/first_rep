@@ -18,13 +18,4 @@ public class PlayerFire : MonoBehaviour
             }
         }
     }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.TryGetComponent<OnBulletEnterBox>(out var _))
-        {
-            bullets += DataBank.get_bullet;
-            DataBank.get_bullet = 0;
-        }
-    }
 }
