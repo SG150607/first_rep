@@ -1542,7 +1542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5839177174939770494, guid: 022f802a0dcaf4800b788ffcead62045, type: 3}
-  enemi_counter: 0
+  enemi_counter: 40
   min_time: 3
 --- !u!114 &297955945
 MonoBehaviour:
